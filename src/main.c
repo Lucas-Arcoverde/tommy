@@ -1,3 +1,37 @@
+int flag_to_int(flag)
+{
+	if (strcmp(flag, "-h") == 0 || strcmp(flag, "--help") == 0)
+	{
+		return 0;
+	}
+
+	else if (strcmp(flag, "--version") == 0)
+	{
+		return 1;
+	}
+
+	else if (strcmp(flag, "-a") == 0 || strcmp(flag, "--add") == 0)
+	{
+		return 2;
+	}
+	
+	else if (strcmp(flag, "-v") == 0 || strcmp(flag, "--view") == 0)
+	{
+		return 3;
+	}	
+
+	else if (strcmp(flag, "-u") == 0 || strcmp(flag, "--update") == 0)
+	{
+		return 4;
+	}
+
+	else if (strcmp(flag, "-r") == 0 || strcmp(flag, "--update") == 0)
+	{
+		return 5;
+	}
+
+}
+
 int main(int argc, char * argv[])
 {
 	if (argc < 2) // verifica se há argumentos suficientes.
@@ -5,40 +39,35 @@ int main(int argc, char * argv[])
 		return 1;
 	}
 
-		char * flag = argv[1];
+	char * flag = argv[1];
+	int flag_value = flag_to_int(flag);
 
-	switch (flag)
+	switch (flag_value)
 	{
-		case "-h":
-		case "--help":
+		case 0: // -h  --help
 			//display_help_message(program_name);
 			break;
 
-		case "-v":
-		case "--version":
+		case 1: // --version
 			//display_program_version();
 			break;
 
-		case "-a": //Create
-		case "--add":
+		case 2: // -a  --add | Create
 			//char * task = argv[2];
 			//add_task(task);
 			break;
 
-		case "-v": //Read
-		case "--view":
+		case 3: // -v  --view | Read
 			//view_tasks();
 			break;
 
-		case "-u": //Update
-		case "--update":
+		case 4: // -u  --update | Update
 			//char * task_index = argv[2];
 			//char * task = argv[3];
 			//update_task(task_index, task);
 			break;
 
-		case "-r": // Delete
-		case "--remove":
+		case 5: // -r  --remove | Delete
 			//char * task_index = argv[2];
 			//remove_task(task_index);
 			break;
