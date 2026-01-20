@@ -53,7 +53,7 @@ int main(int argc, char * argv[])
 			break;
 
 		case 1: // --version
-			//display_program_version();
+			display_program_version();
 			break;
 
 		case 2: // -a  --add | Create
