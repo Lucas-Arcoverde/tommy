@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 #include "task_process.h"
 
@@ -18,6 +19,24 @@ void add_task(char * task)
 	{
 		strcpy(todo_list[task_counter], task);
 		task_counter++;
+	}
+}
+
+void view_tasks()
+{
+	if (todo_list[0] == "" || todo_list[0] == NULL)
+	{
+		return;
+	}
+	
+	else
+	{	
+		printf("To-Do List:\n\n");
+		printf("INDEX        TASK\n");
+		for (int i = 0; i < task_counter; i++) //percorre a todo list
+		{
+			printf("%d           %s\n", i, todo_list[i]);
+		}
 	}
 }
 
