@@ -1,4 +1,5 @@
 #include <string.h>
+#include "utils.h"
 
 int flag_to_int(char * flag)
 {
@@ -47,7 +48,8 @@ int main(int argc, char * argv[])
 	switch (flag_value)
 	{
 		case 0: // -h  --help
-			//display_help_message(program_name);
+			char * program_name = argv[0];
+			display_help_message(program_name);
 			break;
 
 		case 1: // --version
