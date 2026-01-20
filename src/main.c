@@ -1,4 +1,6 @@
-int flag_to_int(flag)
+#include <string.h>
+
+int flag_to_int(char * flag)
 {
 	if (strcmp(flag, "-h") == 0 || strcmp(flag, "--help") == 0)
 	{
