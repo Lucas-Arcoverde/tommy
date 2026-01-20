@@ -56,3 +56,20 @@ void update_task(char * task_index, char * task)
 
 }
 
+void remove_task(char * task_index)
+{
+	int task_index_value = atoi(task_index);
+	if (task_index_value < 0 || task_index_value >= task_counter)
+	{
+		return;
+	}
+
+	for (int i = task_index_value; i < task_counter; i++)
+	{
+		strcpy(todo_list[task_index_value], todo_list[task_index_value + 1]);
+	}
+
+	task_counter--;
+
+}
+
