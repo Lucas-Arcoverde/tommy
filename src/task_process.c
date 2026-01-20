@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "task_process.h"
 
@@ -38,5 +39,20 @@ void view_tasks()
 			printf("%d           %s\n", i, todo_list[i]);
 		}
 	}
+}
+
+void update_task(char * task_index, char * task)
+{
+	int task_index_value = atoi(task_index);
+	if (task_index_value < 0 || task_index_value >= task_counter)
+	{
+		return;
+	}
+
+	else
+	{
+		strcpy(todo_list[task_index_value], task);
+	}
+
 }
 
