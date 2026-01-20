@@ -1,5 +1,6 @@
 #include <string.h>
 #include "utils.h"
+#include "task_process.h"
 
 int flag_to_int(char * flag)
 {
@@ -57,8 +58,8 @@ int main(int argc, char * argv[])
 			break;
 
 		case 2: // -a  --add | Create
-			//char * task = argv[2];
-			//add_task(task);
+			char * task = argv[2];
+			add_task(task);
 			break;
 
 		case 3: // -v  --view | Read

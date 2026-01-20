@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 #include "task_process.h"
 
@@ -18,7 +17,6 @@ void add_task(char * task)
 	else
 	{
 		strcpy(todo_list[task_counter], task);
-		printf(todo_list[task_counter]);
 		task_counter++;
 	}
 }
