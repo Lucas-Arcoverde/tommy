@@ -14,11 +14,13 @@ void display_help_message(char * program_name)
 	printf(" -a  --add <TASK>		Add a new task to your list.\n");
 	printf(" -v  --view			Display your To-Do List.\n");
 	printf(" -u  --update <TASK_INDEX>	Change a task info.\n");
-	printf(" -r  --remove <TASK_INDEX>	Remove a task from your list.\n");
+	printf(" -r  --remove <TASK_INDEX>	Remove a task from your list.\n\n");
 }
 
 void display_program_version()
 {
-	return;
+	printf("Tommy\n");
+	printf("by Lucas A Melo.\n");
+	printf("\nVersion 0.19.1.26.\n");
 }
 
