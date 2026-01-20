@@ -67,9 +67,9 @@ int main(int argc, char * argv[])
 			break;
 
 		case 4: // -u  --update | Update
-			//char * task_index = argv[2];
-			//char * task = argv[3];
-			//update_task(task_index, task);
+			char * task_index = argv[2];
+			char * updated_task = argv[3];
+			update_task(task_index, updated_task);
 			break;
 
 		case 5: // -r  --remove | Delete
