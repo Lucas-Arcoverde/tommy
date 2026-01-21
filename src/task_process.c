@@ -9,6 +9,18 @@
 char todo_list[MAX_TASKS][MAX_CHARS];
 int task_counter = 0;
 
+void save_data()
+{
+	FILE * data_file = fopen("data.txt", "w");
+
+	for (int i = 0; i < task_counter; i++) // percorre a lista
+	{
+		fprintf(data_file, "%s\n", todo_list[i]);
+	}
+
+	fclose(data_file);
+}
+
 void add_task(char * task)
 {
 	if (task_counter == MAX_TASKS)
@@ -20,6 +32,7 @@ void add_task(char * task)
 	{
 		strcpy(todo_list[task_counter], task);
 		task_counter++;
+		save_data();
 	}
 }
 
@@ -52,6 +65,7 @@ void update_task(char * task_index, char * task)
 	else
 	{
 		strcpy(todo_list[task_index_value], task);
+		save_data();
 	}
 
 }
@@ -70,6 +84,7 @@ void remove_task(char * task_index)
 	}
 
 	task_counter--;
+	save_data();
 
 }
 
