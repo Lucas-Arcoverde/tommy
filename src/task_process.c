@@ -21,6 +21,22 @@ void save_data()
 	fclose(data_file);
 }
 
+void load_data()
+{
+	FILE * data_file = fopen("data.txt", "r");
+	
+	char task[MAX_CHARS];
+	for (int i = 0; i < task_counter; i++)
+	{
+		while (fgets(task, MAX_CHARS, data_file))
+		{
+			printf("%s", task);
+		}
+	}
+
+	fclose(data_file);
+}
+
 void add_task(char * task)
 {
 	if (task_counter == MAX_TASKS)
