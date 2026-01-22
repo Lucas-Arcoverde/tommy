@@ -26,14 +26,11 @@ void load_data()
 	FILE * data_file = fopen("data.txt", "r");
 	
 	char task[MAX_CHARS];
-	for (int i = 0; i < task_counter; i++)
-	{
-		while (fgets(task, MAX_CHARS, data_file))
-		{
-			printf("%s", task);
-		}
-	}
-
+    while (fgets(task, MAX_CHARS, data_file))
+    {
+        printf("%s", task); //imprime para testes
+    }
+        
 	fclose(data_file);
 }
 
