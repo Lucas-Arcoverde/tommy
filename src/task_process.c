@@ -11,7 +11,7 @@ int task_counter = 0;
 
 void save_data()
 {
-	FILE * data_file = fopen("data.txt", "w");
+	FILE * data_file = fopen("data.txt", "a");
 
 	for (int i = 0; i < task_counter; i++) // percorre a lista
 	{
