@@ -37,6 +37,7 @@ void load_data()
 
 void add_task(char * task)
 {
+    load_data();
 	if (task_counter == MAX_TASKS)
 	{
 		return;
@@ -71,6 +72,7 @@ void view_tasks()
 
 void update_task(char * task_index, char * task)
 {
+    load_data();
 	int task_index_value = atoi(task_index);
 	if (task_index_value < 0 || task_index_value >= task_counter)
 	{
@@ -87,6 +89,7 @@ void update_task(char * task_index, char * task)
 
 void remove_task(char * task_index)
 {
+    load_data();
 	int task_index_value = atoi(task_index);
 	if (task_index_value < 0 || task_index_value >= task_counter)
 	{
