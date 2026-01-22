@@ -62,10 +62,10 @@ void view_tasks()
 	else
 	{	
 		printf("To-Do List:\n\n");
-		printf("INDEX        TASK\n");
+		printf("INDEX       TASK\n");
 		for (int i = 0; i < task_counter; i++) //percorre a todo list
 		{
-			printf("%d           %s\n", i, todo_list[i]);
+			printf("%d           %s", i, todo_list[i]);
 		}
 	}
 }
