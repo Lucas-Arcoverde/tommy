@@ -25,10 +25,11 @@ void load_data()
 {
 	FILE * data_file = fopen("data.txt", "r");
 	
-	char task[MAX_CHARS];
-    while (fgets(task, MAX_CHARS, data_file))
+    int i = 0;
+    while (fgets(todo_list[i], MAX_CHARS, data_file))
     {
-        printf("%s", task); //imprime para testes
+        i++;
+        task_counter++;
     }
         
 	fclose(data_file);
@@ -51,6 +52,7 @@ void add_task(char * task)
 
 void view_tasks()
 {
+    load_data();
 	if (todo_list[0] == "" || todo_list[0] == NULL)
 	{
 		return;
