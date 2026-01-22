@@ -24,7 +24,6 @@ void save_data()
 void load_data()
 {
 	FILE * data_file = fopen("data.txt", "r");
-	
     int i = 0;
     while (fgets(todo_list[i], MAX_CHARS, data_file))
     {
