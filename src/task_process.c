@@ -36,7 +36,6 @@ void load_data()
 
 void add_task(char * task)
 {
-    load_data();
 	if (task_counter == MAX_TASKS)
 	{
 		return;
