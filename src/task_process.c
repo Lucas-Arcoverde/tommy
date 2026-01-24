@@ -11,7 +11,15 @@ int task_counter = 0;
 
 void save_data()
 {
-    FILE * data_file = fopen("data.txt", "w");
+    FILE * data_file;
+    if (fopen("data.txt", "r"))
+    {
+        data_file = fopen("data.txt", "a");
+    }
+    else
+    {
+        data_file = fopen("data.txt", "w");
+    }
     if (data_file == NULL)
     {
         return;
@@ -52,6 +60,7 @@ void add_task(char * task)
 	{
 		strcpy(todo_list[task_counter], task);
 		task_counter++;
+        save_data();
 	}
 }
 
