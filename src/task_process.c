@@ -25,6 +25,22 @@ void save_data()
     fclose(data_file);
 }
 
+void load_data()
+{
+    FILE * data_file = fopen("data.txt", "r");
+    if (data_file == NULL)
+    {
+        return;
+    }
+
+    while (task_counter < MAX_TASKS && fgets(todo_list[task_counter], MAX_CHARS, data_file))
+    {
+        task_counter++;
+    }
+
+    fclose(data_file);
+}
+
 void add_task(char * task)
 {
 	if (task_counter == MAX_TASKS)
