@@ -41,10 +41,13 @@ void load_data()
         return;
     }
 
-    while (task_counter < MAX_TASKS && fgets(todo_list[task_counter], MAX_CHARS, data_file))
+    int i = 0;
+    while (fgets(todo_list[i], MAX_TASKS, data_file))
     {
-        task_counter++;
+        i++;
     }
+
+    task_counter = i;
 
     fclose(data_file);
 }
@@ -66,6 +69,7 @@ void add_task(char * task)
 
 void view_tasks()
 {
+    load_data();
 	if (todo_list[0] == "" || todo_list[0] == NULL)
 	{
 		return;
