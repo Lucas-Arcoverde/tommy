@@ -11,15 +11,7 @@ int task_counter = 0;
 
 void save_data()
 {
-    FILE * data_file;
-    if (fopen("data.txt", "r"))
-    {
-        data_file = fopen("data.txt", "a");
-    }
-    else
-    {
-        data_file = fopen("data.txt", "w");
-    }
+    FILE * data_file = fopen("data.txt", "w");
     if (data_file == NULL)
     {
         return;
@@ -88,4 +80,17 @@ void view_tasks()
     printf("%d", task_counter);
 }
 
+void update_task(char * task_index, char * task)
+{
+    return;
+}
+
+void remove_task(char * task_index)
+{
+    load_data();
+    int task_index_value = atoi(task_index);
+
+    strcpy(todo_list[task_index_value], todo_list[task_index_value + 1]);
+    save_data();
+}
 
