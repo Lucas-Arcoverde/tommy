@@ -9,6 +9,22 @@
 char todo_list[MAX_TASKS][MAX_CHARS];
 int task_counter = 0;
 
+void save_data()
+{
+    FILE * data_file = fopen("data.txt", "w");
+    if (data_file == NULL)
+    {
+        return;
+    }
+
+    for (int i = 0; i < task_counter; i++)
+    {
+        fprintf(data_file, "%s\n", todo_list[i]);
+    }
+
+    fclose(data_file);
+}
+
 void add_task(char * task)
 {
 	if (task_counter == MAX_TASKS)
