@@ -92,7 +92,16 @@ void view_tasks()
 
 void update_task(char * task_index, char * task)
 {
-    return;
+    load_data();
+    int task_index_value = atoi(task_index);
+
+    if (task_index_value > task_counter || task_index_value < 0)
+    {
+        return;
+    }
+
+    strcpy(todo_list[task_index_value], task);
+    save_data();
 }
 
 void remove_task(char * task_index)
