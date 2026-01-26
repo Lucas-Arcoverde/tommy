@@ -11,40 +11,47 @@ int task_counter = 0;
 
 void save_data()
 {
-    FILE * data_file;
-    if ((data_file = fopen("data.txt", "r")))
+    FILE * data_file = fopen("data.txt", "w");
+    if (data_file == NULL)
     {
-        data_file = fopen("data.txt", "a");
+        return;
     }
 
-    else
+    for (int i = 0; i < task_counter; i++)
     {
-        data_file = fopen("data.txt", "w");
+        fprintf(data_file, "%s\n", todo_list[i]);
     }
 
-	for (int i = 0; i < task_counter; i++) // percorre a lista
-	{
-		fprintf(data_file, "%s\n", todo_list[i]);
-	}
-
-	fclose(data_file);
+    fclose(data_file);
 }
 
 void load_data()
 {
-	FILE * data_file = fopen("data.txt", "r");
+    FILE * data_file = fopen("data.txt", "r");
+    if (data_file == NULL)
+    {
+        return;
+    }
+
     int i = 0;
     while (fgets(todo_list[i], MAX_CHARS, data_file))
     {
+        size_t len = strlen(todo_list[i]);
+        if (todo_list[i][len-1] == '\n')
+        {
+            todo_list[i][len-1] = '\0';
+        }
         i++;
-        task_counter++;
     }
-        
-	fclose(data_file);
+
+    task_counter = i;
+
+    fclose(data_file);
 }
 
 void add_task(char * task)
 {
+    load_data();
 	if (task_counter == MAX_TASKS)
 	{
 		return;
@@ -54,14 +61,14 @@ void add_task(char * task)
 	{
 		strcpy(todo_list[task_counter], task);
 		task_counter++;
-		save_data();
+        save_data();
 	}
 }
 
 void view_tasks()
 {
     load_data();
-	if (todo_list[0] == "" || todo_list[0] == NULL)
+	if (strcmp(todo_list[0], "") == 0 || todo_list == NULL)
 	{
 		return;
 	}
@@ -72,7 +79,11 @@ void view_tasks()
 		printf("INDEX       TASK\n");
 		for (int i = 0; i < task_counter; i++) //percorre a todo list
 		{
-			printf("%d           %s", i, todo_list[i]);
+            if (strcmp(todo_list[i], "") == 0 || strcmp(todo_list[i], " ") == 0)
+            {
+                continue;
+            }
+			printf("%d           %s\n", i, todo_list[i]);
 		}
 	}
 
@@ -81,35 +92,15 @@ void view_tasks()
 
 void update_task(char * task_index, char * task)
 {
-	int task_index_value = atoi(task_index);
-	if (task_index_value < 0 || task_index_value >= task_counter)
-	{
-		return;
-	}
-
-	else
-	{
-		strcpy(todo_list[task_index_value], task);
-		save_data();
-	}
-
+    return;
 }
 
 void remove_task(char * task_index)
 {
-	int task_index_value = atoi(task_index);
-	if (task_index_value < 0 || task_index_value >= task_counter)
-	{
-		return;
-	}
+    load_data();
+    int task_index_value = atoi(task_index);
 
-	for (int i = task_index_value; i < task_counter; i++)
-	{
-		strcpy(todo_list[i], todo_list[i + 1]);
-	}
-
-	task_counter--;
-	save_data();
-
+    strcpy(todo_list[task_index_value], todo_list[task_index_value + 1]);
+    save_data();
 }
 
