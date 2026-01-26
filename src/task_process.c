@@ -34,8 +34,13 @@ void load_data()
     }
 
     int i = 0;
-    while (fgets(todo_list[i], MAX_TASKS, data_file))
+    while (fgets(todo_list[i], MAX_CHARS, data_file))
     {
+        size_t len = strlen(todo_list[i]);
+        if (todo_list[i][len-1] == '\n')
+        {
+            todo_list[i][len-1] = '\0';
+        }
         i++;
     }
 
@@ -46,6 +51,7 @@ void load_data()
 
 void add_task(char * task)
 {
+    load_data();
 	if (task_counter == MAX_TASKS)
 	{
 		return;
@@ -62,7 +68,7 @@ void add_task(char * task)
 void view_tasks()
 {
     load_data();
-	if (todo_list[0] == "" || todo_list[0] == NULL)
+	if (strcmp(todo_list[0], "") == 0 || todo_list == NULL)
 	{
 		return;
 	}
@@ -73,7 +79,11 @@ void view_tasks()
 		printf("INDEX       TASK\n");
 		for (int i = 0; i < task_counter; i++) //percorre a todo list
 		{
-			printf("%d           %s", i, todo_list[i]);
+            if (strcmp(todo_list[i], "") == 0 || strcmp(todo_list[i], " ") == 0)
+            {
+                continue;
+            }
+			printf("%d           %s\n", i, todo_list[i]);
 		}
 	}
 
