@@ -21,6 +21,6 @@ void display_program_version()
 {
 	printf("Tommy\n");
 	printf("by Lucas A Melo.\n");
-	printf("\nVersion [ 1.26.01.2026 ].\n"); // version 1 realise january 26th 2026.
+	printf("\nVersion [ 1.27.1.26 ].\n"); // version 1 realise january 27th 2026.
 }
 
