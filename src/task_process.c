@@ -103,7 +103,11 @@ void remove_task(char * task_index)
     load_data();
     int task_index_value = atoi(task_index);
 
-    strcpy(todo_list[task_index_value], todo_list[task_index_value + 1]);
+    for (int i = task_index_value; i < task_counter; i++)
+    {
+        strcpy(todo_list[i], todo_list[i+1]);
+    }
+
     task_counter--;
     save_data();
 }
