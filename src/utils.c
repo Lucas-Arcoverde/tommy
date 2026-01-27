@@ -20,7 +20,7 @@ void display_help_message(char * program_name)
 void display_program_version()
 {
 	printf("Tommy\n");
-	printf("by Lucas A Melo.\n");
+	printf("by Lucas Arcoverde.\n");
 	printf("\nVersion [ 1.27.1.26 ].\n"); // version 1 realise january 27th 2026.
 }
 
