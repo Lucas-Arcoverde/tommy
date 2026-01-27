@@ -57,12 +57,9 @@ void add_task(char * task)
 		return;
 	}
 
-	else
-	{
-		strcpy(todo_list[task_counter], task);
-		task_counter++;
-        save_data();
-	}
+	strcpy(todo_list[task_counter], task);
+	task_counter++;
+    save_data();
 }
 
 void view_tasks()
@@ -73,18 +70,15 @@ void view_tasks()
 		return;
 	}
 	
-	else
-	{	
-		printf("To-Do List:\n\n");
-		printf("INDEX       TASK\n");
-		for (int i = 0; i < task_counter; i++) //percorre a todo list
-		{
-            if (strcmp(todo_list[i], "") == 0 || strcmp(todo_list[i], " ") == 0)
-            {
-                continue;
-            }
-			printf("%d           %s\n", i, todo_list[i]);
-		}
+	printf("To-Do List:\n\n");
+	printf("INDEX       TASK\n");
+	for (int i = 0; i < task_counter; i++) //percorre a todo list
+	{
+        if (strcmp(todo_list[i], "") == 0 || strcmp(todo_list[i], " ") == 0)
+        {
+            continue;
+        }
+		printf("%d           %s\n", i, todo_list[i]);
 	}
 
     printf("%d", task_counter);
