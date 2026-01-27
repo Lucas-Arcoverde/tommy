@@ -1,3 +1,59 @@
 Tommy To-Do List
 by Lucas A Melo
 version 1.26.01.2026
+
+OVERVIEW
+--------
+
+TOMMY is a simple to-do list program for command-line-interfaces (CLI).
+I made the app while learning C programming, therefore, it will not be the best program in the world, and probally there will be a few mistakes in the code.
+Someone may be wondering why i choose the name "Tommy" for the project, and there is a reason that i like to explain:
+
+I started with a simple generic name for a simple app, just like "To-Do App",
+then i started playing with the words To-Do.
+So i got things like ToDo, then Toddo, then Toddy, and finally, Tommy.
+That is how i like to name my own things, giving it a personal touch.
+
+FEATURES
+--------
+
+TOMMY can:
+* Add a task to a list;
+* Remove a task from a list;
+* Update a task from your list;
+* View your list.
+
+At this moment (v1.26.1.26) it only have these few features, but i am considering expand with things like multiple lists, implement a TUI and et cetera.
+
+USAGE
+-----
+
+0. Install git amd C compiler if necessary:
+
+On arch based linux distros
+$ pacman -S git
+$ pacman -S gcc
+
+1. Clone the repository:
+
+$ git clone https://www.github.com/lucas-a-melo/tommy
+
+2. Change directory and compile:
+
+$ cd tommy
+$ gcc -o tommy src/*.c
+
+3. Run:
+
+$ ./tommy -h
+
+FEEDBACK
+--------
+
+As i said before, i made it just for learning, so donot take it seriously.
+But somehow if you really liked it and want updates/improvements or even contributing, please let me know :D
+
+Remind giving it a start!
+
+Thank you.
+
