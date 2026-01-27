@@ -1,6 +1,6 @@
 Tommy To-Do List
 by Lucas A Melo
-version 1.26.01.2026
+version 1.27.1.26
 
 OVERVIEW
 --------
@@ -27,7 +27,7 @@ TOMMY can:
 * Update a task from your list;
 * View your list.
 
-At this moment (v1.26.1.26) it only have these few features, but i am considering expand with things like multiple lists, implement a TUI and et cetera.
+At this moment (v1.x) it only have these few features, but i am considering expand with things like multiple lists, implement a TUI and et cetera.
 
 USAGE
 -----
