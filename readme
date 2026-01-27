@@ -1,5 +1,5 @@
 Tommy To-Do List
-by Lucas A Melo
+by Lucas Arcoverde
 version 1.27.1.26
 
 OVERVIEW
@@ -40,7 +40,7 @@ $ pacman -S gcc
 
 1. Clone the repository:
 
-$ git clone https://www.github.com/lucas-a-melo/tommy
+$ git clone https://www.github.com/lucas-arcoverde/tommy
 
 2. Change directory and compile:
 
