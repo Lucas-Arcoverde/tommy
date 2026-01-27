@@ -80,8 +80,6 @@ void view_tasks()
         }
 		printf("%d           %s\n", i, todo_list[i]);
 	}
-
-    printf("%d", task_counter);
 }
 
 void update_task(char * task_index, char * task)
