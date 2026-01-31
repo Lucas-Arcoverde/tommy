@@ -12,5 +12,5 @@ typedef struct {
   char title[MAX_TITLE_SIZE];
   char description[MAX_DESCRIPTION_SIZE];
   char date[MAX_DATE_SIZE]
-} task;
+} Task;
 
