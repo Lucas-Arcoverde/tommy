@@ -19,3 +19,17 @@ typedef struct {
 
 Task todo_list[MAX_TASKS];
 
+void save_data()
+{
+  FILE * data_file = fopen("data.txt", "w");
+
+  for (int i = 0; i < task_counter; i++)
+  {
+    fprintf(data_file, "%s\n", todo_list[i].title);
+    fprintf(data_file, "%s\n", todo_list[i].description);
+    fprintf(data_file, "%s\n", todo_list[i].date)
+  }
+
+  fclose(data_file);
+}
+
