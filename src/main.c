@@ -58,8 +58,10 @@ int main(int argc, char * argv[])
 			break;
 
 		case 2: // -a  --add | Create
-			char * task = argv[2];
-			//add_task(task);
+			char * title = argv[2];
+      char * desc = argv[3];
+      char * date = argv[4];
+			add_task(title, desc, date);
 			break;
 
 		case 3: // -v  --view | Read

@@ -44,8 +44,7 @@ void add_task(char * title, char * description, char * date)
   strcpy(todo_list[task_counter].description, description);
   strcpy(todo_list[task_counter].date, date);
 
-  save_data();
-
   task_counter++;
+  save_data();
 }
 
