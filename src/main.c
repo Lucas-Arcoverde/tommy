@@ -59,22 +59,22 @@ int main(int argc, char * argv[])
 
 		case 2: // -a  --add | Create
 			char * task = argv[2];
-			add_task(task);
+			//add_task(task);
 			break;
 
 		case 3: // -v  --view | Read
-			view_tasks();
+			//view_tasks();
 			break;
 
 		case 4: // -u  --update | Update
 			char * task_index = argv[2];
 			char * updated_task = argv[3];
-			update_task(task_index, updated_task);
+			//update_task(task_index, updated_task);
 			break;
 
 		case 5: // -r  --remove | Delete
 			char * task_to_remove_index = argv[2];
-			remove_task(task_to_remove_index);
+			//remove_task(task_to_remove_index);
 			break;
 
 		default:

@@ -33,3 +33,19 @@ void save_data()
   fclose(data_file);
 }
 
+void add_task(char * title, char * description, char * date)
+{
+  if (task_counter == MAX_TASKS)
+  {
+    return;
+  }
+
+  strcpy(todo_list[task_counter].title, title);
+  strcpy(todo_list[task_counter].description, description);
+  strcpy(todo_list[task_counter].date, date);
+
+  save_data();
+
+  task_counter++;
+}
+
