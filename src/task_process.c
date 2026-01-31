@@ -14,7 +14,7 @@ int task_counter = 0;
 typedef struct {
   char title[MAX_TITLE_SIZE];
   char description[MAX_DESCRIPTION_SIZE];
-  char date[MAX_DATE_SIZE]
+  char date[MAX_DATE_SIZE];
 } Task;
 
 Task todo_list[MAX_TASKS];
@@ -27,7 +27,7 @@ void save_data()
   {
     fprintf(data_file, "%s\n", todo_list[i].title);
     fprintf(data_file, "%s\n", todo_list[i].description);
-    fprintf(data_file, "%s\n", todo_list[i].date)
+    fprintf(data_file, "%s\n", todo_list[i].date);
   }
 
   fclose(data_file);
