@@ -33,6 +33,29 @@ void save_data()
   fclose(data_file);
 }
 
+void load_data()
+{
+  FILE * data_file = fopen("data.txt", "r");
+
+  char line1[500];
+  char line2[500];
+  char line3[500];
+
+  int i = 0;
+  while (fgets(line1, sizeof(line1), data_file) && fgets(line2, sizeof(line2), data_file) && fgets(line3, sizeof(line3), data_file))
+  {
+    line1[strcspn(line1, "\n")] = '\0';
+    strcpy(todo_list[i].title, line1);
+    strcpy(todo_list[i].description, line2);
+    strcpy(todo_list[i].date, line3);
+    i++;
+  }
+
+  task_counter = i;
+
+  fclose(data_file);
+}
+
 void add_task(char * title, char * description, char * date)
 {
   if (task_counter == MAX_TASKS)
