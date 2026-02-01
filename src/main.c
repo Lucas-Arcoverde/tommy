@@ -65,7 +65,7 @@ int main(int argc, char * argv[])
 			break;
 
 		case 3: // -v  --view | Read
-			//view_tasks();
+			view_tasks();
 			break;
 
 		case 4: // -u  --update | Update
