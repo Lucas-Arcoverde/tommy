@@ -71,3 +71,16 @@ void add_task(char * title, char * description, char * date)
   save_data();
 }
 
+void view_tasks()
+{
+  load_data();
+  
+  printf("\nTODO LIST\n");
+  for (int i = 0; i < task_counter; i++)
+  {
+    printf("\nINDEX\tTASK\n");
+    printf("%i\t%s\n", i, todo_list[i].title);
+    printf("\n");
+  }
+}
+
