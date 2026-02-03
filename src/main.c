@@ -70,8 +70,10 @@ int main(int argc, char * argv[])
 
 		case 4: // -u  --update | Update
 			char * task_index = argv[2];
-			char * updated_task = argv[3];
-			//update_task(task_index, updated_task);
+			char * updated_title = argv[3];
+      char * updated_description = argv[4];
+      char * updated_date = argv[5];
+			update_task(task_index, updated_title, updated_description, updated_date);
 			break;
 
 		case 5: // -r  --remove | Delete

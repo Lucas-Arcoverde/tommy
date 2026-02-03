@@ -103,7 +103,7 @@ void update_task(char * task_index, char * title, char * description, char * dat
   load_data();
   int task_index_value = atoi(task_index);
 
-  if (task_index_value < 0 || task_index_value > task_counter)
+  if (task_index_value < 0 || task_index_value >= task_counter)
   {
     return;
   }
