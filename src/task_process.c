@@ -45,6 +45,9 @@ void load_data()
   while (fgets(line1, sizeof(line1), data_file) && fgets(line2, sizeof(line2), data_file) && fgets(line3, sizeof(line3), data_file))
   {
     line1[strcspn(line1, "\n")] = '\0';
+    line2[strcspn(line2, "\n")] = '\0';
+    line3[strcspn(line3, "\n")] = '\0';
+
     strcpy(todo_list[i].title, line1);
     strcpy(todo_list[i].description, line2);
     strcpy(todo_list[i].date, line3);
@@ -58,6 +61,7 @@ void load_data()
 
 void add_task(char * title, char * description, char * date)
 {
+  load_data();
   if (task_counter == MAX_TASKS)
   {
     return;
@@ -74,13 +78,18 @@ void add_task(char * title, char * description, char * date)
 void view_tasks()
 {
   load_data();
-  
-  printf("\nTODO LIST\n");
-  for (int i = 0; i < task_counter; i++)
-  {
-    printf("\nINDEX\tTASK\n");
-    printf("%i\t%s\n", i, todo_list[i].title);
-    printf("\n");
-  }
+    printf("\n==================== TODO LIST ====================\n");
+    printf("%-5s | %-30s | %-20s\n", "ID", "TITLE", "DATE");
+    printf("---------------------------------------------------\n");
+
+    for (int i = 0; i < task_counter; i++)
+    {
+        printf("%-5d | %-30s | %-20s\n",
+               i,
+               todo_list[i].title,
+               todo_list[i].date);
+    }
+
+    printf("===================================================\n"); 
 }
 
