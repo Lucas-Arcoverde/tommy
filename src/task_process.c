@@ -37,6 +37,11 @@ void load_data()
 {
   FILE * data_file = fopen("data.txt", "r");
 
+  if (!data_file)
+  {
+    data_file = fopen("data.txt", "w");
+  }
+
   char line1[500];
   char line2[500];
   char line3[500];
@@ -91,5 +96,22 @@ void view_tasks()
     }
 
     printf("===================================================\n"); 
+}
+
+void update_task(char * task_index, char * title, char * description, char * date)
+{
+  load_data();
+  int task_index_value = atoi(task_index);
+
+  if (task_index_value < 0 || task_index_value > task_counter)
+  {
+    return;
+  }
+
+  strcpy(todo_list[task_index_value].title, title);
+  strcpy(todo_list[task_index_value].description, description);
+  strcpy(todo_list[task_index_value].date, date);
+
+  save_data();
 }
 
