@@ -78,7 +78,7 @@ int main(int argc, char * argv[])
 
 		case 5: // -r  --remove | Delete
 			char * task_to_remove_index = argv[2];
-			//remove_task(task_to_remove_index);
+			remove_task(task_to_remove_index);
 			break;
 
 		default:

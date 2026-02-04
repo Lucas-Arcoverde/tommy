@@ -40,6 +40,8 @@ void load_data()
   if (!data_file)
   {
     data_file = fopen("data.txt", "w");
+    fclose(data_file);
+    data_file = fopen("data.txt", "r");
   }
 
   char line1[500];
@@ -47,7 +49,10 @@ void load_data()
   char line3[500];
 
   int i = 0;
-  while (fgets(line1, sizeof(line1), data_file) && fgets(line2, sizeof(line2), data_file) && fgets(line3, sizeof(line3), data_file))
+  while (i < MAX_TASKS &&
+         fgets(line1, sizeof(line1), data_file) &&
+         fgets(line2, sizeof(line2), data_file) && 
+         fgets(line3, sizeof(line3), data_file))
   {
     line1[strcspn(line1, "\n")] = '\0';
     line2[strcspn(line2, "\n")] = '\0';
@@ -112,6 +117,27 @@ void update_task(char * task_index, char * title, char * description, char * dat
   strcpy(todo_list[task_index_value].description, description);
   strcpy(todo_list[task_index_value].date, date);
 
+  save_data();
+}
+
+void remove_task(char * task_index)
+{
+  load_data();
+  int task_index_value = atoi(task_index);
+
+  if (task_index_value < 0 || task_index_value >= task_counter)
+  {
+    return;
+  }
+
+  for (int i = task_index_value; i < task_counter-1; i++)
+  {
+    strcpy(todo_list[i].title, todo_list[i+1].title);
+    strcpy(todo_list[i].description, todo_list[i+1].description);
+    strcpy(todo_list[i].date, todo_list[i+1].date);
+  }
+  
+  task_counter--;
   save_data();
 }
 
