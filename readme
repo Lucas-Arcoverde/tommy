@@ -27,7 +27,9 @@ TOMMY can:
 * Update a task from your list;
 * View your list.
 
-At this moment (v1.x) it only have these few features, but i am considering expand with things like multiple lists, implement a TUI and et cetera.
+The tasks are structs with a title, description and date.
+
+At this moment it only have these few features, but i am considering expand with things like multiple lists, implement a TUI and et cetera.
 
 USAGE
 -----
