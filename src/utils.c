@@ -9,18 +9,17 @@ void display_help_message(char * program_name)
 	printf("Usage: %s [FLAG] [ARGUMENTS]\n\n", program_name);
 
 	printf("Commands:\n");
-	printf(" -h  --help			Display this help message.\n");
-	printf(" --version			Display the current version of the program.\n");
-	printf(" -a  --add <TASK>		Add a new task to your list.\n");
-	printf(" -v  --view			Display your To-Do List.\n");
-	printf(" -u  --update <TASK_INDEX>	Change a task info.\n");
-	printf(" -r  --remove <TASK_INDEX>	Remove a task from your list.\n\n");
+	printf(" -a  --add <TITLE> <DESC> <DATE>	Add a new task to your list.\n");
+	printf(" -v  --view				View your to-do list.\n");
+	printf(" -u  --update <INDEX> <TITLE> <DESC> <DATE>\n");
+	printf("					Update a task information.\n");
+	printf(" -r  --remove <INDEX>			Remove a task from your list.\n");
 }
 
 void display_program_version()
 {
 	printf("Tommy\n");
 	printf("by Lucas Arcoverde.\n");
-	printf("\nVersion [ 1.27.1.26 ].\n"); // version 1 realise january 27th 2026.
+	printf("\nVersion [ 2.7.2.26 ].\n"); // version 2 realise February 2nd 2026.
 }
 
