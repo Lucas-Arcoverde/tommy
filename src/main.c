@@ -34,6 +34,11 @@ int flag_to_int(char * flag)
 		return 5;
 	}
 
+  else if (strcmp(flag, "-d") == 0 || strcmp(flag, "--view-details") == 0)
+  {
+      return 6;
+  }
+
 }
 
 int main(int argc, char * argv[])
@@ -80,6 +85,11 @@ int main(int argc, char * argv[])
 			char * task_to_remove_index = argv[2];
 			remove_task(task_to_remove_index);
 			break;
+
+    case 6:
+      char * index = argv[2];
+      view_details(index);
+      break;
 
 		default:
 			break;

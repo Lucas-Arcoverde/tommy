@@ -141,3 +141,20 @@ void remove_task(char * task_index)
   save_data();
 }
 
+void view_details(char *task_index)
+{
+  load_data();
+
+  int index = atoi(task_index);
+
+  if (index < 0 || index > task_counter)
+  {
+    return;
+  }
+
+  printf("==== TASK DETAILS ====\n");
+  printf("Title       : %s\n", todo_list[index].title);
+  printf("Description : %s\n", todo_list[index].description);
+  printf("Date        : %s\n", todo_list[index].date);
+  printf("======================\n");
+}
