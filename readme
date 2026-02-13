@@ -1,6 +1,6 @@
 Tommy To-Do List
 by Lucas Arcoverde
-version 2.2.7.26
+version 2.13.2.26
 
 OVERVIEW
 --------
@@ -44,14 +44,15 @@ $ pacman -S gcc
 
 $ git clone https://www.github.com/lucas-arcoverde/tommy
 
-2. Change directory and compile:
+2. Change directory and install:
 
 $ cd tommy
-$ gcc -o tommy src/*.c
+$ make
+$ make install
 
 3. Run:
 
-$ ./tommy -h
+$ tommy -h
 
 FEEDBACK
 --------
